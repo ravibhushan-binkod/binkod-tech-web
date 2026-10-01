@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BINKOD Tech — Applications</title>
+  <meta name="description" content="BINKOD Tech builds useful digital products — Family Path Locator, a family location-sharing app for Android, and BINKOD ABC, a pre-primary learning app in development.">
+  <meta name="theme-color" content="#2563eb">
+  <!-- TODO: Add canonical URL and og:url once the production domain is confirmed. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BINKOD Tech">
+  <meta property="og:title" content="BINKOD Tech — Applications">
+  <meta property="og:description" content="BINKOD Tech builds useful digital products — Family Path Locator for Android and BINKOD ABC, in development.">
+  <!-- TODO: Add og:image once the production domain is confirmed. -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/fav-96.png">
+  <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <script src="/js/global.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header root-header">
+    <div class="container header-inner">
+      <!-- Primary brand: the BINKOD wordmark links to www.binkod.in -->
+      <a class="root-logo" href="https://www.binkod.in/" target="_blank" rel="noopener noreferrer">
+        <img src="/public/assets/shared/binkod.png" alt="BINKOD Tech" width="150" height="68">
+      </a>
+
+      <!-- Applications: grouped product navigation -->
+      <details class="nav-apps" id="nav-apps">
+        <summary class="nav-apps__toggle">
+          Applications
+          <svg class="nav-apps__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="nav-apps__panel">
+          <ul class="nav-apps__list">
+            <li>
+              <a class="nav-apps__item" href="/family-path-locator/">
+                <img class="nav-apps__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="36" height="36">
+                <span class="nav-apps__meta">
+                  <span class="nav-apps__name">Family Path Locator</span>
+                  <span class="nav-apps__desc">Family location &amp; safety</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-apps__item" href="/binkod-abc/">
+                <img class="nav-apps__icon" src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="36" height="36" loading="lazy">
+                <span class="nav-apps__meta">
+                  <span class="nav-apps__name">
+                    BINKOD ABC
+                    <span class="nav-apps__badge">Under development</span>
+                  </span>
+                  <span class="nav-apps__desc">Pre-primary learning</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================ APPLICATION SHOWCASE (first content) ============================ -->
+    <section class="root-hero" aria-labelledby="applications-title">
+      <div class="container">
+        <div class="showcase">
+          <!-- ============ LEFT — Family Path Locator (Android phone) ============ -->
+          <div class="showcase__slot anim-in--left">
+            <div class="showcase__panel showcase__panel--fp">
+              <!-- Map-inspired backdrop: soft coordinate grid + flowing routes -->
+              <span class="fp-deco fp-deco--grid" aria-hidden="true"></span>
+              <svg class="fp-deco fp-deco__routes" viewBox="0 0 300 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                <path class="fp-route fp-route--a" d="M-24 92 C 60 44, 140 152, 232 98 S 336 54, 372 128"/>
+                <path class="fp-route fp-route--b" d="M-24 374 C 70 424, 152 318, 246 382 S 348 402, 372 344"/>
+                <circle class="fp-route-dot fp-route-dot--a" cx="66" cy="64" r="4.5"/>
+                <circle class="fp-route-dot fp-route-dot--b" cx="236" cy="392" r="4.5"/>
+              </svg>
+
+              <!-- Android phone mockup -->
+              <div class="fp-stage">
+                <span class="fp-stage__glow" aria-hidden="true"></span>
+                <div class="phone-float">
+                  <div class="phone-tilt">
+                    <div class="phone">
+                      <span class="phone__btn phone__btn--vol" aria-hidden="true"></span>
+                      <span class="phone__btn phone__btn--power" aria-hidden="true"></span>
+                      <div class="phone__screen">
+                        <div class="app-ui">
+                          <div class="app-ui__bar">
+                            <span>9:41</span>
+                            <span class="app-ui__sys" aria-hidden="true">
+                              <svg viewBox="0 0 12 8" focusable="false"><rect x="0" y="5.2" width="2.2" height="2.8" rx="0.6"/><rect x="3.4" y="3.6" width="2.2" height="4.4" rx="0.6"/><rect x="6.8" y="1.8" width="2.2" height="6.2" rx="0.6"/><rect x="10" y="0" width="2" height="8" rx="0.6"/></svg>
+                              <svg viewBox="0 0 12 8" focusable="false"><path d="M6 7.7 0.7 2.5A7.5 7.5 0 0 1 11.3 2.5Z"/></svg>
+                              <svg viewBox="0 0 11 7" focusable="false"><rect x="0" y="0.8" width="8.6" height="5.4" rx="1.6"/><rect x="9.4" y="2.3" width="1.6" height="2.4" rx="0.8"/></svg>
+                            </span>
+                          </div>
+                          <div class="app-ui__head">
+                            <img class="app-ui__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="34" height="34">
+                            <div class="app-ui__titles">
+                              <span class="app-ui__name">Family Path Locator</span>
+                              <span class="app-ui__avail">
+                                <svg class="app-ui__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+                                Available on Google Play
+                              </span>
+                            </div>
+                          </div>
+                          <div class="app-ui__map">
+                            <svg class="app-ui__map-svg" viewBox="0 0 200 130" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                              <path class="app-road" d="M-14 36 C 44 8, 88 66, 142 40 S 196 18, 224 44"/>
+                              <path class="app-road" d="M-14 100 C 52 120, 116 80, 166 104 S 214 112, 232 94"/>
+                              <path class="app-road" d="M20 -14 C 34 40, 10 84, 40 148"/>
+                              <path class="app-route" d="M26 106 C 58 88, 66 52, 108 46 S 158 38, 174 22"/>
+                              <circle class="app-route-start" cx="26" cy="106" r="4"/>
+                              <g class="app-pin" transform="translate(174 22)">
+                                <circle class="app-pin__ping" cx="0" cy="-14" r="6"/>
+                                <path class="app-pin__shape" d="M0 0 C-6 -8.5 -8.5 -11.5 -8.5 -15.5 A8.5 8.5 0 1 1 8.5 -15.5 C8.5 -11.5 6 -8.5 0 0 Z"/>
+                                <circle class="app-pin__dot" cx="0" cy="-15.5" r="3.2"/>
+                              </g>
+                            </svg>
+                          </div>
+                          <ul class="app-ui__pills">
+                            <li>Location Sharing</li>
+                            <li>Family Groups</li>
+                            <li>Safety Alerts</li>
+                            <li>Weather</li>
+                            <li>GeoTag</li>
+                            <li>Current Location</li>
+                          </ul>
+                        </div>
+                        <span class="phone__cam" aria-hidden="true"></span>
+                        <span class="phone__glare" aria-hidden="true"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="showcase__info">
+                <h2 class="showcase__title">Family Path Locator</h2>
+                <p class="showcase__desc">A private family location-sharing and safety app for Android.</p>
+                <div class="showcase__actions">
+                  <a class="btn btn--play" href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>
+                    <svg class="btn__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+                    Get it on Google Play
+                  </a>
+                  <a class="btn btn--primary" href="/family-path-locator/">
+                    Open Family Path Locator
+                    <span class="showcase__arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ RIGHT — BINKOD ABC (under development) ============ -->
+          <div class="showcase__slot anim-in--right">
+            <div class="showcase__panel showcase__panel--abc">
+              <!-- Blueprint-inspired backdrop -->
+              <span class="abc-deco abc-deco--grid" aria-hidden="true"></span>
+              <span class="abc-dot abc-dot--1" aria-hidden="true"></span>
+              <span class="abc-dot abc-dot--2" aria-hidden="true"></span>
+              <span class="abc-dot abc-dot--3" aria-hidden="true"></span>
+              <span class="abc-dot abc-dot--4" aria-hidden="true"></span>
+
+              <p class="abc-status">
+                <span class="abc-status__dot" aria-hidden="true"></span>
+                Under development
+              </p>
+
+              <div class="abc-stage">
+                <span class="abc-stage__glow" aria-hidden="true"></span>
+
+                <span class="abc-frag abc-frag--a" aria-hidden="true">A</span>
+                <span class="abc-frag abc-frag--b" aria-hidden="true">B</span>
+                <span class="abc-frag abc-frag--c" aria-hidden="true">C</span>
+                <span class="abc-frag abc-frag--d" aria-hidden="true">1</span>
+                <span class="abc-frag abc-frag--e" aria-hidden="true">2</span>
+
+                <span class="abc-wire abc-wire--a" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="abc-wire abc-wire--b" aria-hidden="true"><i></i><i></i><i></i></span>
+
+                <div class="abc-orbit">
+                  <span class="abc-orbit__ring abc-orbit__ring--dashed" aria-hidden="true"></span>
+                  <span class="abc-orbit__ring abc-orbit__ring--sweep" aria-hidden="true"></span>
+                  <span class="abc-orbit__halo" aria-hidden="true"></span>
+                  <div class="abc-icon-intro">
+                    <div class="abc-icon-float">
+                      <img class="abc-icon" src="/public/assets/binkod-abc/icons/app-icon.png" alt="BINKOD ABC app icon" width="156" height="156" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="abc-build" aria-hidden="true">
+                  <span class="abc-build__label">Building</span>
+                  <span class="abc-build__steps"><i></i><i></i><i></i><i></i><i></i></span>
+                </div>
+              </div>
+
+              <div class="showcase__info">
+                <h2 class="showcase__title">BINKOD ABC</h2>
+                <p class="showcase__desc">A pre-primary learning and practice application designed for Nursery, LKG and UKG children.</p>
+                <ul class="showcase__tags">
+                  <li>Nursery</li>
+                  <li>LKG</li>
+                  <li>UKG</li>
+                  <li>English</li>
+                  <li>Hindi</li>
+                  <li>Phonics</li>
+                  <li>Practice</li>
+                  <li>Educational Games</li>
+                </ul>
+                <div class="showcase__actions">
+                  <a class="showcase__link" href="/binkod-abc/">
+                    Explore BINKOD ABC
+                    <span class="showcase__arrow" aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Applications heading + subtitle — intentionally placed AFTER the showcase -->
+      <div class="container root-hero__inner root-hero__apps">
+        <h1 id="applications-title" class="anim-in">Applications</h1>
+        <p class="lead anim-in anim-in--delay">Explore our current applications, with more useful and engaging experiences coming in the future.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand__name">BINKOD Tech</span>
+          <p class="footer-brand__text">
+            Useful digital products built by BINKOD Tech.
+          </p>
+          <a class="binkod-link" href="https://www.binkod.in/" target="_blank" rel="noopener noreferrer">
+            <img src="/public/assets/shared/binkod.png" alt="BINKOD Tech" width="150" height="68" loading="lazy">
+          </a>
+          <p class="made-in">Made in India <span class="made-in__heart" aria-hidden="true">❤️</span></p>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer__title">Products</h2>
+          <ul class="footer-links">
+            <li><a href="/family-path-locator/">Family Path Locator</a></li>
+            <li><a href="/binkod-abc/">BINKOD ABC</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-hosting">
+        Binkod is hosted at <a href="https://boardsilly.in">BOARDSILLY</a>, our home base on the web.
+      </p>
+      <div class="footer-bottom">
+        <span>© 2026 Binkod. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

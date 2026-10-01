@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BINKOD ABC — Pre-Primary Learning for Nursery, LKG &amp; UKG | BINKOD Tech</title>
+  <meta name="description" content="BINKOD ABC is an upcoming pre-primary learning and practice application for Nursery, LKG and UKG children, developed by BINKOD Tech. Currently in development.">
+  <meta name="theme-color" content="#2563eb">
+  <script>
+    document.documentElement.classList.add('js');
+    window.setTimeout(function () {
+      if (!document.documentElement.classList.contains('is-reveal-ready')) {
+        document.documentElement.classList.remove('js');
+      }
+    }, 3000);
+  </script>
+  <!-- TODO: Add canonical URL and og:url once the production domain is confirmed. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BINKOD Tech">
+  <meta property="og:title" content="BINKOD ABC — Pre-Primary Learning for Nursery, LKG &amp; UKG">
+  <meta property="og:description" content="BINKOD ABC is an upcoming pre-primary learning and practice application for Nursery, LKG and UKG children, developed by BINKOD Tech.">
+  <!-- TODO: Add og:image once the production domain is confirmed. -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/fav-96.png">
+  <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/binkod-abc.css">
+  <script src="/js/global.js" defer></script>
+  <script src="/js/binkod-abc.js" defer></script>
+</head>
+<body class="abc-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/binkod-abc/">
+        <img class="brand__img" src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="38" height="38">
+        <span class="brand__text">
+          <span class="brand__name">BINKOD ABC</span>
+          <span class="brand__by">by BINKOD Tech</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="primary-navigation" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="/binkod-abc/" aria-current="page">Home</a></li>
+          <li><a class="site-nav__link" href="/binkod-abc/#classes">Classes</a></li>
+          <li><a class="site-nav__link" href="/binkod-abc/#learning">Learning</a></li>
+          <li><a class="site-nav__link" href="/binkod-abc/#practice">Practice</a></li>
+          <li><a class="site-nav__link" href="/binkod-abc/#status">Status</a></li>
+          <li><a class="site-nav__link" href="/binkod-abc/#contact">Contact</a></li>
+        </ul>
+        <!-- BINKOD ABC is in development: intentionally no download/store button. -->
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================ HERO ============================ -->
+    <section class="abc-hero">
+      <div class="abc-hero__shapes" aria-hidden="true">
+        <span class="abc-shape abc-shape--dot"></span>
+        <span class="abc-shape abc-shape--ring"></span>
+        <span class="abc-shape abc-shape--blob"></span>
+        <span class="abc-shape abc-shape--pill"></span>
+        <span class="abc-shape abc-shape--dot"></span>
+
+        <!-- Far layer: large, very faint letters -->
+        <span class="abc-letter abc-letter--far abc-l--zoom" style="--x:5%;--y:5%;--fs:10rem;--rot:-10deg;--lc:rgba(37,99,235,.05);--dur:28s;--del:-4s">A</span>
+        <span class="abc-letter abc-letter--far abc-l--drift" style="--x:74%;--y:3%;--fs:11rem;--rot:8deg;--lc:rgba(124,58,237,.05);--dur:32s;--del:-9s;--dx:-1.6rem;--dy:1.2rem">D</span>
+        <span class="abc-letter abc-letter--far abc-l--grow abc-l--hide" style="--x:90%;--y:26%;--fs:9.5rem;--rot:-14deg;--lc:rgba(22,163,74,.06);--dur:30s;--del:-14s">G</span>
+        <span class="abc-letter abc-letter--far abc-l--swirl abc-l--hide" style="--x:6%;--y:42%;--fs:12rem;--rot:6deg;--rot2:15deg;--lc:rgba(245,158,11,.05);--dur:34s;--del:-2s">J</span>
+        <span class="abc-letter abc-letter--far abc-l--zoom abc-l--hide" style="--x:58%;--y:70%;--fs:10rem;--rot:-6deg;--lc:rgba(225,29,72,.05);--dur:26s;--del:-11s">M</span>
+        <span class="abc-letter abc-letter--far abc-l--drift" style="--x:28%;--y:80%;--fs:11rem;--rot:12deg;--lc:rgba(37,99,235,.05);--dur:36s;--del:-6s;--dx:1.8rem;--dy:-1.4rem">P</span>
+        <span class="abc-letter abc-letter--far abc-l--fade" style="--x:84%;--y:76%;--fs:9.5rem;--rot:-8deg;--lc:rgba(124,58,237,.09);--dur:28s;--del:-17s">S</span>
+        <span class="abc-letter abc-letter--far abc-l--still" style="--x:46%;--y:8%;--fs:9rem;--rot:14deg;--lc:rgba(22,163,74,.05);--dur:30s;--del:-13s">V</span>
+        <span class="abc-letter abc-letter--far abc-l--grow abc-l--tab-hide" style="--x:16%;--y:22%;--fs:8.5rem;--rot:-16deg;--lc:rgba(37,99,235,.06);--dur:31s;--del:-8s">B</span>
+        <span class="abc-letter abc-letter--far abc-l--drift" style="--x:64%;--y:90%;--fs:10rem;--rot:6deg;--lc:rgba(245,158,11,.05);--dur:29s;--del:-3s;--dx:-1.5rem;--dy:-1.2rem">Y</span>
+
+        <!-- Mid layer: medium letters -->
+        <span class="abc-letter abc-letter--mid abc-l--swirl" style="--x:12%;--y:9%;--fs:6rem;--rot:-12deg;--rot2:6deg;--lc:rgba(124,58,237,.07);--dur:24s;--del:-5s">C</span>
+        <span class="abc-letter abc-letter--mid abc-l--zoom" style="--x:40%;--y:4%;--fs:6.5rem;--rot:9deg;--lc:rgba(37,99,235,.07);--dur:22s;--del:-12s">E</span>
+        <span class="abc-letter abc-letter--mid abc-l--grow abc-l--tab-hide" style="--x:93%;--y:14%;--fs:5.5rem;--rot:-7deg;--lc:rgba(22,163,74,.07);--dur:26s;--del:-7s">F</span>
+        <span class="abc-letter abc-letter--mid abc-l--drift" style="--x:34%;--y:32%;--fs:7rem;--rot:14deg;--lc:rgba(245,158,11,.07);--dur:25s;--del:-15s;--dx:-1.4rem;--dy:-1.6rem">H</span>
+        <span class="abc-letter abc-letter--mid abc-l--fade" style="--x:52%;--y:44%;--fs:6rem;--rot:-10deg;--lc:rgba(37,99,235,.1);--dur:23s;--del:-1s">I</span>
+        <span class="abc-letter abc-letter--mid abc-l--zoom" style="--x:3%;--y:68%;--fs:6.5rem;--rot:8deg;--lc:rgba(124,58,237,.07);--dur:27s;--del:-9s">K</span>
+        <span class="abc-letter abc-letter--mid abc-l--grow abc-l--hide" style="--x:22%;--y:56%;--fs:6rem;--rot:-14deg;--lc:rgba(22,163,74,.07);--dur:24s;--del:-4s">L</span>
+        <span class="abc-letter abc-letter--mid abc-l--swirl abc-l--tab-hide" style="--x:78%;--y:50%;--fs:6.5rem;--rot:6deg;--rot2:-8deg;--lc:rgba(37,99,235,.07);--dur:26s;--del:-13s">N</span>
+        <span class="abc-letter abc-letter--mid abc-l--drift" style="--x:56%;--y:20%;--fs:6rem;--rot:-8deg;--lc:rgba(245,158,11,.07);--dur:25s;--del:-8s;--dx:1.4rem;--dy:1.3rem">O</span>
+        <span class="abc-letter abc-letter--mid abc-l--zoom abc-l--hide" style="--x:10%;--y:86%;--fs:7rem;--rot:12deg;--lc:rgba(124,58,237,.07);--dur:28s;--del:-2s">Q</span>
+        <span class="abc-letter abc-letter--mid abc-l--grow abc-l--hide" style="--x:44%;--y:90%;--fs:6rem;--rot:-6deg;--lc:rgba(22,163,74,.07);--dur:24s;--del:-16s">R</span>
+        <span class="abc-letter abc-letter--mid abc-l--fade abc-l--tab-hide" style="--x:70%;--y:4%;--fs:6.5rem;--rot:10deg;--lc:rgba(37,99,235,.1);--dur:23s;--del:-6s">T</span>
+        <span class="abc-letter abc-letter--mid abc-l--drift abc-l--hide" style="--x:94%;--y:60%;--fs:6rem;--rot:-12deg;--lc:rgba(124,58,237,.07);--dur:27s;--del:-10s;--dx:-1.3rem;--dy:-1.5rem">U</span>
+        <span class="abc-letter abc-letter--mid abc-l--swirl" style="--x:32%;--y:66%;--fs:7rem;--rot:8deg;--rot2:-6deg;--lc:rgba(245,158,11,.07);--dur:26s;--del:-14s">W</span>
+        <span class="abc-letter abc-letter--mid abc-l--grow abc-l--tab-hide" style="--x:60%;--y:80%;--fs:6rem;--rot:-9deg;--lc:rgba(37,99,235,.07);--dur:25s;--del:-7s">X</span>
+        <span class="abc-letter abc-letter--mid abc-l--zoom" style="--x:20%;--y:36%;--fs:6.5rem;--rot:11deg;--lc:rgba(22,163,74,.07);--dur:24s;--del:-11s">Z</span>
+
+        <!-- Alphabet repeats filling remaining space -->
+        <span class="abc-letter abc-letter--mid abc-l--drift" style="--x:92%;--y:44%;--fs:5rem;--rot:14deg;--lc:rgba(37,99,235,.07);--dur:25s;--del:-12s;--dx:-1.4rem;--dy:-1.2rem">A</span>
+        <span class="abc-letter abc-letter--mid abc-l--zoom" style="--x:4%;--y:58%;--fs:5.5rem;--rot:-12deg;--lc:rgba(124,58,237,.07);--dur:27s;--del:-5s">E</span>
+        <span class="abc-letter abc-letter--mid abc-l--grow abc-l--hide" style="--x:76%;--y:24%;--fs:5rem;--rot:8deg;--lc:rgba(22,163,74,.07);--dur:24s;--del:-15s">M</span>
+        <span class="abc-letter abc-letter--mid abc-l--swirl" style="--x:26%;--y:94%;--fs:4.5rem;--rot:-6deg;--rot2:9deg;--lc:rgba(245,158,11,.07);--dur:26s;--del:-7s">R</span>
+        <span class="abc-letter abc-letter--mid abc-l--fade" style="--x:44%;--y:36%;--fs:4.5rem;--rot:10deg;--lc:rgba(37,99,235,.1);--dur:23s;--del:-10s">T</span>
+        <span class="abc-letter abc-letter--mid abc-l--drift abc-l--hide" style="--x:88%;--y:60%;--fs:4.5rem;--rot:-8deg;--lc:rgba(124,58,237,.07);--dur:25s;--del:-4s;--dx:1.2rem;--dy:1.4rem">H</span>
+        <span class="abc-letter abc-letter--mid abc-l--grow" style="--x:8%;--y:94%;--fs:4.5rem;--rot:6deg;--lc:rgba(22,163,74,.07);--dur:24s;--del:-13s">L</span>
+        <span class="abc-letter abc-letter--mid abc-l--zoom" style="--x:62%;--y:6%;--fs:4.5rem;--rot:-10deg;--lc:rgba(245,158,11,.07);--dur:26s;--del:-9s">W</span>
+        <span class="abc-letter abc-letter--mid abc-l--still" style="--x:36%;--y:50%;--fs:4rem;--rot:12deg;--lc:rgba(37,99,235,.07);--dur:30s;--del:-6s">D</span>
+        <span class="abc-letter abc-letter--mid abc-l--swirl" style="--x:96%;--y:74%;--fs:4rem;--rot:-14deg;--rot2:7deg;--lc:rgba(124,58,237,.07);--dur:25s;--del:-16s">K</span>
+
+        <!-- Near layer: a few smaller, slightly stronger letters -->
+        <span class="abc-letter abc-letter--near abc-l--swirl" style="--x:8%;--y:32%;--fs:3.2rem;--rot:-14deg;--rot2:10deg;--lc:rgba(37,99,235,.12);--dur:18s;--del:-3s">a</span>
+        <span class="abc-letter abc-letter--near abc-l--grow abc-l--hide" style="--x:48%;--y:16%;--fs:2.8rem;--rot:12deg;--lc:rgba(124,58,237,.12);--dur:16s;--del:-8s">b</span>
+        <span class="abc-letter abc-letter--near abc-l--drift abc-l--tab-hide" style="--x:30%;--y:14%;--fs:3rem;--rot:10deg;--lc:rgba(22,163,74,.11);--dur:17s;--del:-5s;--dx:.9rem;--dy:-.8rem">c</span>
+        <span class="abc-letter abc-letter--near abc-l--zoom abc-l--hide" style="--x:14%;--y:74%;--fs:3.4rem;--rot:-8deg;--lc:rgba(245,158,11,.12);--dur:19s;--del:-12s">d</span>
+        <span class="abc-letter abc-letter--near abc-l--grow abc-l--hide" style="--x:74%;--y:84%;--fs:3rem;--rot:14deg;--lc:rgba(37,99,235,.12);--dur:16s;--del:-2s">e</span>
+        <span class="abc-letter abc-letter--near abc-l--swirl" style="--x:66%;--y:56%;--fs:3.2rem;--rot:-12deg;--rot2:8deg;--lc:rgba(124,58,237,.12);--dur:18s;--del:-9s">f</span>
+        <span class="abc-letter abc-letter--near abc-l--fade abc-l--hide" style="--x:90%;--y:88%;--fs:3rem;--rot:8deg;--lc:rgba(22,163,74,.14);--dur:17s;--del:-6s">g</span>
+        <span class="abc-letter abc-letter--near abc-l--zoom" style="--x:50%;--y:96%;--fs:3.4rem;--rot:-10deg;--lc:rgba(245,158,11,.12);--dur:19s;--del:-14s">h</span>
+      </div>
+      <div class="container abc-hero__grid">
+        <div class="abc-hero__copy anim-in">
+          <div class="abc-hero__badges">
+            <span class="chip chip--accent">Coming Soon</span>
+            <span class="chip">Currently in Development</span>
+          </div>
+          <h1>BINKOD ABC</h1>
+          <p class="abc-hero__tagline">Pre-primary learning &amp; practice</p>
+          <p class="lead">
+            A pre-primary school learning application for Nursery, LKG and UKG
+            children — early learning activities, class-specific content, and
+            interactive practice, created to be child-friendly while giving
+            parents a simple way to follow their child's learning progress.
+          </p>
+          <div class="abc-hero__badges">
+            <span class="chip">Nursery · LKG · UKG</span>
+            <span class="chip">Pre-primary learning</span>
+            <span class="chip">Android application</span>
+          </div>
+          <div class="actions">
+            <a class="btn btn--primary" href="/binkod-abc/#classes">Explore classes</a>
+            <a class="btn btn--outline" href="/binkod-abc/#status">Development status</a>
+          </div>
+        </div>
+        <div class="abc-hero__visual anim-in anim-in--delay">
+          <div>
+            <div class="abc-hero__icon-wrap">
+              <div class="abc-bp" aria-hidden="true">
+                <span class="abc-bp__sheet abc-bp__sheet--back"></span>
+                <span class="abc-bp__sheet abc-bp__sheet--mid"></span>
+                <span class="abc-bp__sheet abc-bp__sheet--front">
+                  <span class="abc-bp__grid"></span>
+                  <span class="abc-bp__ticks abc-bp__ticks--top"></span>
+                  <span class="abc-bp__ticks abc-bp__ticks--left"></span>
+                  <span class="abc-bp__tape"></span>
+                  <span class="abc-bp__steps"><i></i><i></i><i></i><i></i></span>
+                  <span class="abc-bp__pencil">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  </span>
+                </span>
+              </div>
+              <img class="abc-hero__icon" src="/public/assets/binkod-abc/icons/app-icon.png" alt="BINKOD ABC application icon" width="108" height="108">
+            </div>
+            <p class="abc-dev"><span class="abc-dev__dot" aria-hidden="true"></span>Under development</p>
+            <p class="abc-hero__icon-caption">BINKOD ABC · Coming soon</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CLASSES ============================ -->
+    <section id="classes" class="section" aria-labelledby="classes-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Classes</span>
+          <h2 id="classes-title">Learning built around each class</h2>
+          <p class="lead">
+            BINKOD ABC provides age- and class-appropriate learning and
+            practice activities for each pre-primary class.
+          </p>
+        </div>
+        <div class="abc-class-grid" data-reveal-group>
+          <article class="abc-class-card abc-class-card--nursery">
+            <span class="abc-class-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            </span>
+            <h3>Nursery</h3>
+            <p>
+              Nursery-specific learning activities — first English and Hindi
+              activities, identification and recognition exercises, and basic
+              early-learning practice.
+            </p>
+            <span class="chip">Result &amp; progress tracking</span>
+          </article>
+
+          <article class="abc-class-card abc-class-card--lkg">
+            <span class="abc-class-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </span>
+            <h3>LKG</h3>
+            <p>
+              English and Hindi learning, phonics, two- and three-letter word
+              activities, listen-and-learn practice, spelling, recognition,
+              educational games, and fun learning activities.
+            </p>
+            <span class="chip">Result &amp; progress tracking</span>
+          </article>
+
+          <article class="abc-class-card abc-class-card--ukg">
+            <span class="abc-class-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </span>
+            <h3>UKG</h3>
+            <p>
+              UKG-level learning and practice activities are being prepared.
+              This section will grow as development progresses.
+            </p>
+            <span class="chip">More activities coming soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= LEARNING AREAS ========================= -->
+    <section id="learning" class="section section--soft" aria-labelledby="learning-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Learning areas</span>
+          <h2 id="learning-title">What children will learn and practice</h2>
+          <p class="lead">
+            The major learning areas planned across Nursery, LKG and UKG.
+          </p>
+        </div>
+        <div class="abc-area-grid" data-reveal-group>
+          <article class="abc-area-card">
+            <span class="abc-area-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </span>
+            <h3>English</h3>
+            <p>English learning activities for early readers.</p>
+          </article>
+
+          <article class="abc-area-card">
+            <span class="abc-area-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+            </span>
+            <h3>Hindi</h3>
+            <p>Hindi learning and practice activities.</p>
+          </article>
+
+          <article class="abc-area-card">
+            <span class="abc-area-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            </span>
+            <h3>Phonics</h3>
+            <p>Phonics and sound-based early reading activities.</p>
+          </article>
+
+          <article class="abc-area-card">
+            <span class="abc-area-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+            </span>
+            <h3>Listening</h3>
+            <p>Listen-and-learn activities for young children.</p>
+          </article>
+
+          <article class="abc-area-card">
+            <span class="abc-area-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+            <h3>Identification</h3>
+            <p>Recognition and identification activities.</p>
+          </article>
+
+          <article class="abc-area-card">
+            <span class="abc-area-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </span>
+            <h3>Vocabulary / Words</h3>
+            <p>Word- and vocabulary-building activities.</p>
+          </article>
+
+          <article class="abc-area-card">
+            <span class="abc-area-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </span>
+            <h3>General Knowledge</h3>
+            <p>General knowledge and India-related learning.</p>
+          </article>
+
+          <article class="abc-area-card">
+            <span class="abc-area-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </span>
+            <h3>Practice</h3>
+            <p>Fun practice activities that reinforce learning.</p>
+          </article>
+
+          <article class="abc-area-card">
+            <span class="abc-area-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            </span>
+            <h3>Educational Games</h3>
+            <p>Simple educational games for playful learning.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= PRACTICE & FUN ========================= -->
+    <section id="practice" class="section" aria-labelledby="practice-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Practice &amp; fun</span>
+          <h2 id="practice-title">General practice activities</h2>
+          <p class="lead">
+            Planned practice and educational activities that sit alongside the
+            class-wise learning.
+          </p>
+        </div>
+        <div class="abc-practice-grid" data-reveal-group>
+          <article class="abc-practice-card">
+            <span class="abc-practice-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </span>
+            <div>
+              <h3>Daily Challenge</h3>
+              <p>A fresh practice activity for each day.</p>
+            </div>
+          </article>
+
+          <article class="abc-practice-card">
+            <span class="abc-practice-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </span>
+            <div>
+              <h3>Trivia Questions</h3>
+              <p>Simple, fun trivia questions.</p>
+            </div>
+          </article>
+
+          <article class="abc-practice-card">
+            <span class="abc-practice-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </span>
+            <div>
+              <h3>Quiz Game</h3>
+              <p>Quick quizzes for playful practice.</p>
+            </div>
+          </article>
+
+          <article class="abc-practice-card">
+            <span class="abc-practice-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+            </span>
+            <div>
+              <h3>Simple Sudoku</h3>
+              <p>Easy number puzzles for young minds.</p>
+            </div>
+          </article>
+
+          <article class="abc-practice-card">
+            <span class="abc-practice-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </span>
+            <div>
+              <h3>Memory Match</h3>
+              <p>A classic memory-matching game.</p>
+            </div>
+          </article>
+
+          <article class="abc-practice-card">
+            <span class="abc-practice-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            </span>
+            <div>
+              <h3>Know Your India</h3>
+              <p>Learn about India.</p>
+            </div>
+          </article>
+
+          <article class="abc-practice-card">
+            <span class="abc-practice-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </span>
+            <div>
+              <h3>Fun Games</h3>
+              <p>Light, fun games for practice time.</p>
+            </div>
+          </article>
+        </div>
+        <p class="abc-section-note" data-reveal>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>
+            These practice activities are planned as part of BINKOD ABC. They
+            roll out as development progresses — some activities may still be
+            in development.
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ PROGRESS ============================ -->
+    <section id="progress" class="section section--soft" aria-labelledby="progress-title">
+      <div class="container abc-progress-grid">
+        <div class="abc-progress-copy" data-reveal>
+          <span class="eyebrow">Progress</span>
+          <h2 id="progress-title">Simple progress for parents</h2>
+          <p class="lead">
+            BINKOD ABC is designed to keep track of children's activity
+            results and learning progress, so parents get a simple way to
+            understand how their child is doing.
+          </p>
+          <ul class="abc-checks">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              Activity results tracked within the application
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              A simple overview of learning progress
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              Designed to be clear and parent-friendly
+            </li>
+          </ul>
+        </div>
+        <div class="abc-progress-card" data-reveal role="img" aria-label="Illustration of a learning progress summary">
+          <div class="abc-progress-card__head">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <strong>Learning progress</strong>
+            <span>Illustration</span>
+          </div>
+          <div class="abc-bars">
+            <div class="abc-bar">
+              <div class="abc-bar__label"><span>Activity results</span></div>
+              <div class="abc-bar__track"><div class="abc-bar__fill"></div></div>
+            </div>
+            <div class="abc-bar">
+              <div class="abc-bar__label"><span>Learning progress</span></div>
+              <div class="abc-bar__track"><div class="abc-bar__fill"></div></div>
+            </div>
+          </div>
+          <p class="abc-progress-card__note">
+            Illustrative representation only — not an actual application
+            screenshot. The final interface may vary.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== DEVELOPMENT STATUS ======================== -->
+    <section id="status" class="section" aria-labelledby="status-title">
+      <div class="container">
+        <div class="abc-status" data-reveal>
+          <span class="abc-status__badge">Coming Soon</span>
+          <h2 id="status-title">Currently in development</h2>
+          <p>
+            BINKOD ABC is under active development. More details, activities
+            and features will be added to this page as development progresses.
+          </p>
+          <div class="abc-chip-row">
+            <span class="chip">In development</span>
+            <span class="chip">No release date yet</span>
+            <span class="chip">Android</span>
+          </div>
+          <div class="actions">
+            <a class="btn btn--light" href="/binkod-abc/#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="abc-contact-card" data-reveal>
+          <h2 id="contact-title">Contact</h2>
+          <p>Questions about BINKOD ABC?</p>
+          <p>
+            More information about BINKOD ABC will be shared here as
+            development progresses.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/binkod-abc/">
+            <img class="brand__img" src="/public/assets/binkod-abc/icons/app-icon.png" alt="" width="38" height="38" loading="lazy">
+            <span class="brand__text">
+              <span class="brand__name">BINKOD ABC</span>
+              <span class="brand__by">by BINKOD Tech</span>
+            </span>
+          </a>
+          <p class="footer-brand__text">
+            Pre-primary learning and practice application for Nursery, LKG
+            and UKG — in development.
+          </p>
+          <a class="binkod-link" href="https://www.binkod.in/" target="_blank" rel="noopener noreferrer">
+            <img src="/public/assets/shared/binkod.png" alt="BINKOD Tech" width="150" height="68" loading="lazy">
+          </a>
+          <p class="made-in">Made in India <span class="made-in__heart" aria-hidden="true">❤️</span></p>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer__title">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="/binkod-abc/#classes">Classes</a></li>
+            <li><a href="/binkod-abc/#learning">Learning areas</a></li>
+            <li><a href="/binkod-abc/#practice">Practice</a></li>
+            <li><a href="/binkod-abc/#status">Development status</a></li>
+            <li><a href="/binkod-abc/#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer__title">Products</h2>
+          <ul class="footer-links">
+            <li><a href="/family-path-locator/">Family Path Locator</a></li>
+            <li><a href="/binkod-abc/" aria-current="page">BINKOD ABC</a></li>
+            <li><a href="/">BINKOD Tech home</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-cta">
+          <h2 class="footer__title">Status</h2>
+          <p class="footer-cta__text">BINKOD ABC — coming soon.</p>
+          <a class="btn btn--outline btn--sm" href="/family-path-locator/">Visit Family Path Locator</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Binkod. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

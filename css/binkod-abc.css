@@ -1,0 +1,1149 @@
+/* ==========================================================================
+   BINKOD ABC — binkod-abc.css
+   Design system for the BINKOD ABC upcoming-product page: playful but
+   premium, parent-friendly, educational. Loaded after global.css on the
+   BINKOD ABC page only. Palette tokens are scoped to .abc-page (body class)
+   so Family Path and root pages are unaffected.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Local palette
+   -------------------------------------------------------------------------- */
+.abc-page {
+  --abc-green: #16a34a;
+  --abc-green-soft: #e9f8ee;
+  --abc-blue: #2563eb;
+  --abc-blue-soft: #eaf1fe;
+  --abc-violet: #7c3aed;
+  --abc-violet-soft: #f2ebfe;
+  --abc-amber: #f59e0b;
+  --abc-amber-soft: #fff5de;
+  --abc-rose: #e11d48;
+  --abc-rose-soft: #ffe7ee;
+}
+
+/* Header brand icon — soft-rounded app icon */
+.abc-page .brand__img {
+  border-radius: 0.55rem;
+}
+
+/* --------------------------------------------------------------------------
+   Hero — glass card over soft playful gradients + floating decorations
+   -------------------------------------------------------------------------- */
+.abc-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3.5rem, 2.2rem + 5.5vw, 6rem);
+  background:
+    radial-gradient(40rem 24rem at 88% -12%, rgba(124, 58, 237, 0.14), transparent 60%),
+    radial-gradient(36rem 22rem at -10% 112%, rgba(245, 158, 11, 0.16), transparent 55%),
+    radial-gradient(28rem 18rem at 32% -18%, rgba(22, 163, 74, 0.12), transparent 60%),
+    linear-gradient(180deg, #fbfaff 0%, var(--c-bg) 82%);
+}
+
+.abc-hero__shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.abc-shape {
+  position: absolute;
+  border-radius: 50%;
+  animation: abc-drift 16s ease-in-out infinite alternate;
+}
+
+.abc-shape--dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  background: rgba(37, 99, 235, 0.4);
+}
+
+.abc-shape--ring {
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 3px solid rgba(124, 58, 237, 0.32);
+  background: transparent;
+}
+
+.abc-shape--blob {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%;
+  background: rgba(245, 158, 11, 0.16);
+  filter: blur(2px);
+}
+
+.abc-shape--pill {
+  width: 3.4rem;
+  height: 1.5rem;
+  border-radius: var(--r-pill);
+  background: rgba(22, 163, 74, 0.28);
+}
+
+.abc-shape:nth-child(1) { top: 12%; left: 6%; animation-duration: 13s; }
+.abc-shape:nth-child(2) { top: 20%; right: 10%; animation-duration: 17s; animation-delay: -4s; }
+.abc-shape:nth-child(3) { bottom: 14%; left: 14%; animation-duration: 21s; animation-delay: -8s; }
+.abc-shape:nth-child(4) { top: 58%; right: 6%; animation-duration: 15s; animation-delay: -6s; }
+.abc-shape:nth-child(5) { bottom: 24%; right: 24%; animation-duration: 19s; animation-delay: -10s; }
+
+.abc-letter {
+  position: absolute;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  font-size: var(--fs, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--lc, rgba(37, 99, 235, 0.07));
+  user-select: none;
+  --dx: 0rem;
+  --dy: 0rem;
+  --rot2: var(--rot, 0deg);
+  rotate: var(--rot, 0deg);
+  animation-duration: var(--dur, 22s);
+  animation-delay: var(--del, 0s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.abc-letter--far {
+  --fsm: 0.58;
+}
+
+.abc-letter--mid {
+  --fsm: 0.72;
+}
+
+.abc-letter--near {
+  --fsm: 0.92;
+}
+
+.abc-l--drift {
+  animation-name: abc-l-drift;
+}
+
+.abc-l--zoom {
+  animation-name: abc-l-zoom;
+}
+
+.abc-l--grow {
+  animation-name: abc-l-grow;
+}
+
+.abc-l--swirl {
+  animation-name: abc-l-swirl;
+}
+
+.abc-l--fade {
+  animation-name: abc-l-fade;
+}
+
+.abc-l--still {
+  animation-name: abc-l-still;
+}
+
+@media (max-width: 64em) {
+  .abc-l--tab-hide {
+    display: none;
+  }
+}
+
+@media (max-width: 48em) {
+  .abc-shape:nth-child(n + 4) {
+    display: none;
+  }
+
+  .abc-l--hide {
+    display: none;
+  }
+
+  .abc-letter {
+    font-size: calc(var(--fs, 6rem) * var(--fsm, 0.7));
+    --mk: 0.55;
+    animation-duration: calc(var(--dur, 22s) * 1.35);
+  }
+
+  .abc-bp {
+    scale: 0.82;
+  }
+}
+
+.abc-hero__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(2.5rem, 1.5rem + 5vw, 3.75rem);
+  align-items: center;
+}
+
+@media (min-width: 56em) {
+  .abc-hero__grid {
+    grid-template-columns: 1.08fr 0.92fr;
+  }
+}
+
+.abc-hero__copy {
+  position: relative;
+  padding: clamp(1.6rem, 1rem + 3vw, 2.85rem);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.52));
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: var(--r-xl);
+  box-shadow:
+    0 28px 64px -30px rgba(76, 29, 149, 0.35),
+    0 2px 8px rgba(14, 27, 51, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+}
+
+@supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
+  .abc-hero__copy {
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.97), rgba(250, 248, 255, 0.95));
+  }
+}
+
+.abc-hero__copy > * + * {
+  margin-top: 1.1rem;
+}
+
+.abc-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.abc-hero__tagline {
+  font-size: clamp(1.25rem, 1.1rem + 0.9vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--abc-violet);
+}
+
+.abc-hero .actions {
+  margin-top: 1.6rem;
+}
+
+.abc-hero__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.abc-hero__icon-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.abc-hero__icon-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -14%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(124, 58, 237, 0.22), transparent);
+  animation: abc-glow-pulse 7s ease-in-out infinite;
+  z-index: 1;
+}
+
+.abc-hero__icon {
+  position: relative;
+  z-index: 2;
+  width: 6.75rem;
+  height: 6.75rem;
+  border-radius: 1.6rem;
+  box-shadow:
+    var(--sh-3),
+    0 0 0 1px rgba(255, 255, 255, 0.7),
+    0 0 48px -12px rgba(124, 58, 237, 0.5);
+  animation: abc-float 7s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Hero visual — blueprint sheets + app icon + development badge
+   -------------------------------------------------------------------------- */
+.abc-bp {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 19rem;
+  height: 14.5rem;
+  animation: abc-bp-sway 9s ease-in-out infinite alternate;
+}
+
+.abc-bp__sheet {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.9rem;
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.98), rgba(246, 249, 255, 0.95));
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  box-shadow:
+    0 22px 44px -26px rgba(37, 99, 235, 0.45),
+    0 3px 10px rgba(14, 27, 51, 0.08);
+}
+
+.abc-bp__sheet::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-width: 0 0 1.4rem 1.4rem;
+  border-style: solid;
+  border-color: transparent transparent rgba(37, 99, 235, 0.14) transparent;
+  border-radius: 0 0 0.9rem 0;
+}
+
+.abc-bp__sheet--back {
+  --rot: -7deg;
+  rotate: var(--rot);
+  translate: -1.3rem 0.7rem;
+  opacity: 0.72;
+  animation: abc-bp-tilt 11s ease-in-out infinite alternate;
+}
+
+.abc-bp__sheet--mid {
+  --rot: 5.5deg;
+  rotate: var(--rot);
+  translate: 1.4rem -0.5rem;
+  opacity: 0.85;
+  animation: abc-bp-tilt 10s ease-in-out -3.5s infinite alternate;
+}
+
+.abc-bp__sheet--front {
+  --rot: -1.5deg;
+  rotate: var(--rot);
+}
+
+.abc-bp__grid {
+  position: absolute;
+  inset: 0.9rem;
+  border-radius: 0.5rem;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(37, 99, 235, 0.09) 0 1px, transparent 1px 1.15rem),
+    repeating-linear-gradient(90deg, rgba(37, 99, 235, 0.09) 0 1px, transparent 1px 1.15rem);
+}
+
+.abc-bp__ticks {
+  position: absolute;
+  opacity: 0.55;
+}
+
+.abc-bp__ticks--top {
+  top: 0.3rem;
+  left: 0.9rem;
+  right: 0.9rem;
+  height: 0.5rem;
+  background-image: repeating-linear-gradient(90deg, rgba(37, 99, 235, 0.5) 0 1px, transparent 1px 0.85rem);
+}
+
+.abc-bp__ticks--left {
+  top: 0.9rem;
+  bottom: 0.9rem;
+  left: 0.3rem;
+  width: 0.5rem;
+  background-image: repeating-linear-gradient(180deg, rgba(37, 99, 235, 0.5) 0 1px, transparent 1px 0.85rem);
+}
+
+.abc-bp__tape {
+  position: absolute;
+  top: -0.55rem;
+  left: 50%;
+  width: 5.4rem;
+  height: 1.35rem;
+  translate: -50% 0;
+  rotate: -4deg;
+  background: rgba(245, 158, 11, 0.32);
+  border-left: 1px dashed rgba(245, 158, 11, 0.55);
+  border-right: 1px dashed rgba(245, 158, 11, 0.55);
+  box-shadow: 0 1px 4px rgba(14, 27, 51, 0.12);
+}
+
+.abc-bp__steps {
+  position: absolute;
+  right: 1.15rem;
+  bottom: 1.15rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.abc-bp__steps i {
+  display: block;
+  height: 0.5rem;
+  border-radius: var(--r-pill);
+  background: rgba(37, 99, 235, 0.16);
+  animation: abc-bp-step 4.5s ease-in-out infinite;
+}
+
+.abc-bp__steps i:nth-child(1) { width: 5.6rem; animation-delay: 0s; }
+.abc-bp__steps i:nth-child(2) { width: 4.4rem; animation-delay: 1.1s; }
+.abc-bp__steps i:nth-child(3) { width: 6.2rem; animation-delay: 2.2s; }
+.abc-bp__steps i:nth-child(4) { width: 3.4rem; animation-delay: 3.3s; }
+
+.abc-bp__pencil {
+  position: absolute;
+  left: 1.15rem;
+  bottom: 1.15rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--abc-blue);
+  opacity: 0.75;
+  animation: abc-bp-nudge 4.5s ease-in-out infinite alternate;
+}
+
+.abc-bp__pencil svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.abc-dev {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  width: max-content;
+  margin-inline: auto;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+  padding: 0.4rem 0.95rem;
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--r-pill);
+  box-shadow: 0 6px 16px -8px rgba(239, 68, 68, 0.5);
+}
+
+.abc-dev__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: abc-dev-ring 1.8s ease-out infinite;
+}
+
+.abc-hero__icon-caption {
+  position: relative;
+  margin-top: 0.65rem;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--c-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Classes — Nursery / LKG / UKG
+   -------------------------------------------------------------------------- */
+.abc-class-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 40em) {
+  .abc-class-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.abc-class-card {
+  --abc-tint: var(--abc-blue-soft);
+  --abc-accent: var(--abc-blue);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  background: linear-gradient(168deg, var(--abc-tint) 0%, var(--c-surface) 58%);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-1);
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+
+.abc-class-card--nursery {
+  --abc-tint: var(--abc-green-soft);
+  --abc-accent: var(--abc-green);
+}
+
+.abc-class-card--lkg {
+  --abc-tint: var(--abc-blue-soft);
+  --abc-accent: var(--abc-blue);
+}
+
+.abc-class-card--ukg {
+  --abc-tint: var(--abc-violet-soft);
+  --abc-accent: var(--abc-violet);
+}
+
+.abc-class-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sh-2);
+  border-color: var(--c-line-strong);
+}
+
+.abc-class-card__icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--abc-tint);
+  border: 1px solid var(--c-line);
+  border-color: color-mix(in srgb, var(--abc-accent) 26%, var(--c-line));
+  color: var(--abc-accent);
+}
+
+.abc-class-card__icon .icon {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.abc-class-card h3 {
+  font-size: var(--fs-h3);
+}
+
+.abc-class-card p {
+  color: var(--c-ink-soft);
+  font-size: var(--fs-sm);
+}
+
+.abc-class-card .chip {
+  align-self: flex-start;
+  margin-top: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.95);
+}
+
+/* --------------------------------------------------------------------------
+   Learning areas
+   -------------------------------------------------------------------------- */
+.abc-area-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.5rem), 1fr));
+}
+
+.abc-area-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.4rem 1.35rem;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-1);
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+
+.abc-area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sh-2);
+  border-color: var(--c-line-strong);
+}
+
+.abc-area-card__icon {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: var(--r-md);
+}
+
+.abc-area-card__icon .icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.abc-area-card:nth-child(3n + 1) .abc-area-card__icon {
+  background-color: var(--abc-blue-soft);
+  color: var(--abc-blue);
+}
+
+.abc-area-card:nth-child(3n + 2) .abc-area-card__icon {
+  background-color: var(--abc-violet-soft);
+  color: var(--abc-violet);
+}
+
+.abc-area-card:nth-child(3n) .abc-area-card__icon {
+  background-color: var(--abc-green-soft);
+  color: var(--abc-green);
+}
+
+.abc-area-card h3 {
+  font-size: 1.1rem;
+}
+
+.abc-area-card p {
+  color: var(--c-ink-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   Practice & fun
+   -------------------------------------------------------------------------- */
+.abc-practice-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.abc-practice-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.05rem 1.15rem;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-1);
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+}
+
+.abc-practice-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sh-2);
+  border-color: var(--c-line-strong);
+}
+
+.abc-practice-card__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--r-md);
+  background-color: var(--abc-amber-soft);
+  color: #b45309;
+}
+
+.abc-practice-card__icon .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.abc-practice-card h3 {
+  font-size: 1.02rem;
+}
+
+.abc-practice-card p {
+  color: var(--c-muted);
+  font-size: var(--fs-xs);
+  line-height: 1.5;
+}
+
+.abc-section-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.05rem;
+  border: 1px solid var(--c-note-line);
+  border-radius: var(--r-md);
+  background-color: var(--c-note-bg);
+  color: var(--c-note-ink);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+.abc-section-note .icon {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.18rem;
+}
+
+/* --------------------------------------------------------------------------
+   Progress
+   -------------------------------------------------------------------------- */
+.abc-progress-grid {
+  display: grid;
+  gap: clamp(2rem, 1.2rem + 4vw, 3.5rem);
+  align-items: center;
+}
+
+@media (min-width: 56em) {
+  .abc-progress-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.abc-progress-copy > * + * {
+  margin-top: 1.1rem;
+}
+
+.abc-checks {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1.35rem;
+  padding: 0;
+  list-style: none;
+}
+
+.abc-checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--c-ink-soft);
+  font-size: var(--fs-sm);
+}
+
+.abc-checks .icon {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.2rem;
+  color: var(--abc-green);
+}
+
+.abc-progress-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.4rem, 1.2rem + 1vw, 1.9rem);
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.9), rgba(242, 235, 254, 0.75));
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.abc-progress-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.abc-progress-card__head .icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  color: var(--abc-violet);
+}
+
+.abc-progress-card__head strong {
+  font-size: var(--fs-sm);
+}
+
+.abc-progress-card__head span {
+  margin-left: auto;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.abc-bars {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.abc-bar__label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--c-ink-soft);
+}
+
+.abc-bar__track {
+  height: 0.7rem;
+  border-radius: var(--r-pill);
+  background-color: rgba(124, 58, 237, 0.12);
+  overflow: hidden;
+}
+
+.abc-bar__fill {
+  height: 100%;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--abc-blue), var(--abc-violet));
+}
+
+.abc-bar:first-child .abc-bar__fill {
+  width: 70%;
+}
+
+.abc-bar:nth-child(2) .abc-bar__fill {
+  width: 52%;
+  background: linear-gradient(90deg, var(--abc-green), #0d9488);
+}
+
+.abc-progress-card__note {
+  margin-top: 1.25rem;
+  font-size: var(--fs-xs);
+  color: var(--c-muted);
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   Development status — Coming Soon band
+   -------------------------------------------------------------------------- */
+.abc-status {
+  /* Reset values leaked by global.css's homepage showcase pill of the same name */
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.6;
+  text-transform: none;
+  border: 0;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  padding: clamp(2rem, 1.4rem + 3vw, 3.25rem);
+  background: linear-gradient(120deg, #4c1d95 0%, #2563eb 55%, #0d9488 110%);
+  background-size: 180% 180%;
+  animation: abc-status-pan 18s ease-in-out infinite;
+  color: #ffffff;
+  text-align: center;
+}
+
+.abc-status__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: var(--r-pill);
+  background-color: rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.abc-status h2 {
+  margin-top: 1rem;
+  font-size: var(--fs-h2);
+}
+
+.abc-status p {
+  max-width: 40rem;
+  margin: 0.9rem auto 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+}
+
+.abc-status .abc-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.abc-status .chip {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.abc-status .actions {
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.abc-status .btn--light:hover {
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Contact
+   -------------------------------------------------------------------------- */
+.abc-contact-card {
+  max-width: 40rem;
+  margin-inline: auto;
+  padding: clamp(1.8rem, 1.4rem + 2vw, 2.6rem);
+  background: linear-gradient(160deg, var(--abc-blue-soft), var(--abc-violet-soft));
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-1);
+  text-align: center;
+}
+
+.abc-contact-card > * + * {
+  margin-top: 0.85rem;
+}
+
+.abc-contact-card h2 {
+  font-size: var(--fs-h3);
+}
+
+.abc-contact-card p {
+  color: var(--c-ink-soft);
+  font-size: var(--fs-sm);
+}
+
+.abc-contact-card .contact-email {
+  display: inline-block;
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--c-ink);
+}
+
+.abc-contact-card .actions {
+  justify-content: center;
+  margin-top: 1.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   Keyframes
+   -------------------------------------------------------------------------- */
+@keyframes abc-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-1.5rem, 1.75rem, 0) scale(1.06);
+  }
+}
+
+@keyframes abc-l-drift {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: calc(var(--dx) * var(--mk, 1)) calc(var(--dy) * var(--mk, 1));
+  }
+}
+
+@keyframes abc-l-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.13);
+  }
+}
+
+@keyframes abc-l-grow {
+  from {
+    transform: scale(0.94);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+@keyframes abc-l-swirl {
+  from {
+    rotate: var(--rot, 0deg);
+  }
+  to {
+    rotate: var(--rot2, var(--rot, 0deg));
+  }
+}
+
+@keyframes abc-l-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+
+@keyframes abc-l-still {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0.4rem -0.45rem;
+  }
+}
+
+@keyframes abc-bp-sway {
+  from {
+    transform: rotate(-1.4deg) translateY(0.4rem);
+  }
+  to {
+    transform: rotate(1.4deg) translateY(-0.5rem);
+  }
+}
+
+@keyframes abc-bp-tilt {
+  from {
+    rotate: var(--rot, 0deg);
+  }
+  to {
+    rotate: calc(var(--rot, 0deg) + 1.8deg);
+  }
+}
+
+@keyframes abc-bp-nudge {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate(0.55rem, -0.4rem) rotate(-8deg);
+  }
+}
+
+@keyframes abc-bp-step {
+  0%,
+  100% {
+    background: rgba(37, 99, 235, 0.16);
+    box-shadow: none;
+  }
+  45%,
+  65% {
+    background: rgba(37, 99, 235, 0.7);
+    box-shadow: 0 0 10px -2px rgba(37, 99, 235, 0.6);
+  }
+}
+
+@keyframes abc-dev-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.55);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 0.55rem rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes abc-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.7rem);
+  }
+}
+
+@keyframes abc-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes abc-status-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Gloss / sheen sweep on card hover
+   -------------------------------------------------------------------------- */
+.abc-class-card::before,
+.abc-area-card::before,
+.abc-practice-card::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -65%;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.7) 50%, transparent);
+  transform: skewX(-16deg);
+  pointer-events: none;
+  transition: left 0.7s ease;
+}
+
+.abc-class-card:hover::before,
+.abc-area-card:hover::before,
+.abc-practice-card:hover::before {
+  left: 135%;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll reveal — progressive enhancement driven by js/binkod-abc.js
+   (same pattern as the Family Path homepage).
+   -------------------------------------------------------------------------- */
+.js [data-reveal] {
+  transition:
+    opacity 0.7s ease var(--reveal-delay, 0s),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s),
+    box-shadow var(--t), border-color var(--t);
+}
+
+.js [data-reveal]:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(1.6rem);
+}
+
+.js [data-reveal-group] > * {
+  transition:
+    opacity 0.65s ease var(--reveal-delay, 0s),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s),
+    box-shadow var(--t), border-color var(--t);
+}
+
+.js [data-reveal-group]:not(.is-revealed) > * {
+  opacity: 0;
+  transform: translateY(1.6rem);
+}
+
+.js [data-reveal-group] > *:nth-child(2) { --reveal-delay: 0.07s; }
+.js [data-reveal-group] > *:nth-child(3) { --reveal-delay: 0.14s; }
+.js [data-reveal-group] > *:nth-child(4) { --reveal-delay: 0.21s; }
+.js [data-reveal-group] > *:nth-child(5) { --reveal-delay: 0.28s; }
+.js [data-reveal-group] > *:nth-child(6) { --reveal-delay: 0.35s; }
+.js [data-reveal-group] > *:nth-child(7) { --reveal-delay: 0.42s; }
+.js [data-reveal-group] > *:nth-child(8) { --reveal-delay: 0.49s; }
+.js [data-reveal-group] > *:nth-child(9) { --reveal-delay: 0.56s; }
+
+/* --------------------------------------------------------------------------
+   Responsive animation trimming — fewer decorations on small screens
+   -------------------------------------------------------------------------- */
+@media (max-width: 40em) {
+  .abc-hero__icon {
+    animation-duration: 9s;
+  }
+
+  .abc-shape {
+    animation-duration: 22s;
+  }
+
+  .abc-bp {
+    scale: 0.68;
+  }
+
+  .abc-dev {
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .abc-letter,
+  .abc-bp,
+  .abc-bp__sheet,
+  .abc-bp__steps i,
+  .abc-bp__pencil,
+  .abc-dev__dot {
+    animation: none !important;
+  }
+}

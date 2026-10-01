@@ -1,0 +1,21 @@
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Local environment files (none are used today; kept as a safeguard)
+.env
+.env.*
+
+# Node (not used by this project; guards against accidental installs)
+node_modules/
+package-lock.json
