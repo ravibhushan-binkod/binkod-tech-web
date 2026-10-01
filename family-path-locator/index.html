@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Path Locator — Stay Close, Wherever You Go</title>
+  <meta name="description" content="Family Path Locator is a family location-sharing and safety app for Android that helps families stay connected with current location sharing, family chat, Safety Alerts and more.">
+  <meta name="theme-color" content="#2563eb">
+  <script>
+    document.documentElement.classList.add('js');
+    window.setTimeout(function () {
+      if (!document.documentElement.classList.contains('is-reveal-ready')) {
+        document.documentElement.classList.remove('js');
+      }
+    }, 3000);
+  </script>
+  <!-- TODO: Add canonical URL and og:url once the production domain is confirmed. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BINKOD Tech">
+  <meta property="og:title" content="Family Path Locator — Stay Close, Wherever You Go">
+  <meta property="og:description" content="Family Path Locator is a family location-sharing and safety app for Android that helps families stay connected with current location sharing, family chat, Safety Alerts and more.">
+  <!-- TODO: Add og:image once the production domain is confirmed. -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/fav-96.png">
+  <link rel="apple-touch-icon" href="/public/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/family-path.css">
+  <script src="/js/global.js" defer></script>
+  <script src="/js/family-path.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/family-path-locator/">
+        <img class="brand__img" src="/public/assets/family-path/icons/familypath.png" alt="" width="38" height="38">
+        <span class="brand__text">
+          <span class="brand__name">Family Path Locator</span>
+          <span class="brand__by">by BINKOD Tech</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="primary-navigation" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="/family-path-locator/" aria-current="page">Home</a></li>
+          <li><a class="site-nav__link" href="/family-path-locator/#features">Features</a></li>
+          <li><a class="site-nav__link" href="/family-path-locator/#how-it-works">How It Works</a></li>
+          <li><a class="site-nav__link" href="/family-path-locator/#screenshots">Screenshots</a></li>
+          <li><a class="site-nav__link" href="/family-path-locator/privacy-policy/">Privacy</a></li>
+          <li><a class="site-nav__link" href="/family-path-locator/contact/">Contact</a></li>
+        </ul>
+        <!-- Play Store link opens in a new tab (URL configured in js/global.js). -->
+        <a class="btn btn--play btn--sm" href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>
+          <svg class="btn__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+          Get it on Google Play
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================ HERO ============================ -->
+    <section class="fp-hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="hero-blob hero-blob--primary"></span>
+        <span class="hero-blob hero-blob--accent"></span>
+        <span class="hero-blob hero-blob--sky"></span>
+        <span class="hero-map-grid"></span>
+        <svg class="hero-map" viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <path class="map-road" d="M-40 420 C 220 380, 300 210, 560 240 C 820 270, 900 140, 1240 170"/>
+          <path class="map-route map-route--blue" d="M-40 420 C 220 380, 300 210, 560 240 C 820 270, 900 140, 1240 170"/>
+          <path class="map-road" d="M-40 140 C 260 180, 380 330, 640 350 C 900 370, 1040 470, 1240 440"/>
+          <path class="map-route map-route--accent" d="M-40 140 C 260 180, 380 330, 640 350 C 900 370, 1040 470, 1240 440"/>
+          <path class="map-road" d="M200 600 C 260 440, 480 430, 560 240 C 620 100, 760 60, 840 -40"/>
+          <path class="map-route map-route--mint" d="M200 600 C 260 440, 480 430, 560 240 C 620 100, 760 60, 840 -40"/>
+          <circle class="map-point map-point--blue" cx="360" cy="300" r="4"/>
+          <circle class="map-point map-point--accent" cx="770" cy="432" r="4"/>
+          <circle class="map-point map-point--blue" cx="995" cy="146" r="3.5"/>
+          <g class="map-pin map-pin--blue" transform="translate(560 240)">
+            <circle class="map-pin__ping" cx="0" cy="0" r="7"/>
+            <path class="map-pin__shape" d="M0 0 C -5 -8 -11 -12 -11 -19 a 11 11 0 0 1 22 0 C 11 -12 5 -8 0 0 Z"/>
+            <circle class="map-pin__dot" cx="0" cy="-19" r="4.5"/>
+          </g>
+          <g class="map-pin map-pin--accent" transform="translate(640 350)">
+            <circle class="map-pin__ping" cx="0" cy="0" r="7"/>
+            <path class="map-pin__shape" d="M0 0 C -5 -8 -11 -12 -11 -19 a 11 11 0 0 1 22 0 C 11 -12 5 -8 0 0 Z"/>
+            <circle class="map-pin__dot" cx="0" cy="-19" r="4.5"/>
+          </g>
+          <g class="map-pin map-pin--mint" transform="translate(300 505)">
+            <circle class="map-pin__ping" cx="0" cy="0" r="7"/>
+            <path class="map-pin__shape" d="M0 0 C -5 -8 -11 -12 -11 -19 a 11 11 0 0 1 22 0 C 11 -12 5 -8 0 0 Z"/>
+            <circle class="map-pin__dot" cx="0" cy="-19" r="4.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="container fp-hero__grid">
+        <div class="fp-hero__copy anim-in">
+          <div class="fp-hero__chips">
+            <span class="chip chip--primary">For Android</span>
+            <span class="chip">Family location &amp; safety</span>
+          </div>
+          <h1>Family Path Locator</h1>
+          <p class="fp-hero__tagline">Stay close, wherever you go</p>
+          <p class="lead">
+            A private family location-sharing and safety app designed to help
+            families stay connected, share current location, communicate, and
+            send quick Safety Alerts.
+          </p>
+          <div class="actions">
+            <a class="btn btn--play" href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>
+              <svg class="btn__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+              Get it on Google Play
+            </a>
+            <a class="btn btn--outline" href="#features">See features</a>
+          </div>
+        </div>
+        <div class="fp-hero__visual anim-in anim-in--delay">
+          <!-- Application screenshot/mockup area. When the real Home / Map
+               screenshot is supplied, replace the screen contents with:
+               <img src="/public/assets/family-path/screenshots/home-map.png"
+                    alt="Family Path home screen showing the family map"
+                    width="..." height="..." loading="lazy"> -->
+          <div class="device device--hero" role="img" aria-label="Placeholder for the Family Path Locator home and map screenshot">
+            <div class="device__screen">
+              <img class="device__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="56" height="56">
+              <span class="device__label">Home / Map</span>
+              <span class="device__pending">Screenshot coming soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== TRUST STRIP ========================== -->
+    <section class="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <h2 id="trust-title" class="visually-hidden">Privacy highlights</h2>
+        <ul class="trust__list" data-reveal-group>
+          <li class="trust__item">
+            <span class="trust__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            Family-only location sharing
+          </li>
+          <li class="trust__item">
+            <span class="trust__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </span>
+            No location history
+          </li>
+          <li class="trust__item">
+            <span class="trust__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            Current location only
+          </li>
+          <li class="trust__item">
+            <span class="trust__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+            </span>
+            User-controlled sharing
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================== FEATURES =========================== -->
+    <section id="features" class="section section--soft" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Features</span>
+          <h2 id="features-title">Everything a family needs to stay connected</h2>
+          <p class="lead">
+            Verified features from the Family Path Locator Android app —
+            described accurately, with limitations included.
+          </p>
+        </div>
+
+        <!-- Spotlight features -->
+        <div class="spotlight-grid" data-reveal-group>
+          <article class="spotlight-card">
+            <div class="spotlight-card__media">
+              <img src="/public/assets/family-path/images/location-sharing.png" alt="" width="500" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="spotlight-card__body">
+              <h3>Family Location Sharing</h3>
+              <p>
+                See your family on a shared map with clear location freshness.
+                Members appear with avatar markers, distance, and accuracy
+                information — so you always know when a location was last
+                updated.
+              </p>
+              <p class="note">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Updates follow the app's configured update and movement policy —
+                approximately hourly, or when a member moves — not
+                second-by-second tracking.
+              </p>
+            </div>
+          </article>
+
+          <article class="spotlight-card">
+            <div class="spotlight-card__media">
+              <img src="/public/assets/family-path/images/flash1%20create%20family%20and%20members.png" alt="" width="500" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="spotlight-card__body">
+              <h3>Family Code</h3>
+              <p>
+                Create a family and receive an 8-character Family Code. Share
+                the code with the people you trust — family members join simply
+                by entering it.
+              </p>
+              <div class="chip-row">
+                <span class="chip">8-character code</span>
+                <span class="chip">Up to 6 members per family</span>
+                <span class="chip">Up to 2 families per person</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="spotlight-card">
+            <div class="spotlight-card__media">
+              <img src="/public/assets/family-path/images/flash3%20safety%20alert.png" alt="" width="500" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="spotlight-card__body">
+              <h3>Safety Alerts</h3>
+              <p>
+                Send a Safety Alert with a predefined alert type and an optional
+                custom message. Each alert includes your current address and
+                coordinates, and reaches your family as a push notification.
+              </p>
+              <p class="note">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Safety Alerts require internet connectivity and notification
+                permissions. They are not a replacement for emergency services.
+              </p>
+            </div>
+          </article>
+
+          <article class="spotlight-card">
+            <div class="spotlight-card__media">
+              <img src="/public/assets/family-path/images/location-messages.png" alt="" width="500" height="500" loading="lazy" decoding="async">
+            </div>
+            <div class="spotlight-card__body">
+              <h3>Family Chat</h3>
+              <p>
+                Group family conversations and one-to-one chats, with text
+                and emoji, delivered within the app.
+              </p>
+              <p class="note">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Text and emoji only — up to 500 characters. No chat push
+                notifications, typing indicators, or read receipts.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- GeoTag camera -->
+        <article class="geotag-card" data-reveal>
+          <div class="geotag-card__copy">
+            <h3>GeoTag Camera</h3>
+            <p>
+              Stamp useful details directly onto your photos — name, family,
+              address, latitude and longitude, and date/time.
+            </p>
+            <ul class="check-list">
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+                The stamp is burned into the image pixels.
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+                Photos are saved on your device.
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+                Share through your device's usual share options.
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+                Photos are never uploaded to the Family Path cloud.
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+                No GPS EXIF metadata is added to the image.
+              </li>
+            </ul>
+          </div>
+          <div class="stamp" role="img" aria-label="Example of the information stamped onto a GeoTag photo">
+            <span class="stamp__tag">Example stamp</span>
+            <span class="stamp__line">Your name · Your family · Current address</span>
+            <span class="stamp__line">0.0000, 0.0000</span>
+            <span class="stamp__line">Date · Time</span>
+          </div>
+        </article>
+
+        <!-- Remaining features -->
+        <div class="feature-grid" data-reveal-group>
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            </span>
+            <h3>Background Location Sharing</h3>
+            <p>
+              Family Path can keep sharing your location while the app is
+              closed, using Android background location.
+            </p>
+            <p class="note">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Requires background location and notification permissions. Android
+              shows an active foreground-service notification. Sharing stays
+              under your control and does not restart automatically after a
+              reboot until you open the app.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon feature-card__icon--accent" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+            </span>
+            <h3>Weather</h3>
+            <p>
+              Current weather for you and your family — temperature, feels-like,
+              condition, humidity, cloud cover, wind, and rain.
+            </p>
+            <p class="note">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Current conditions only. Requires internet, uses third-party
+              weather data, and weather sharing can be turned off.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><line x1="23" y1="13" x2="23" y2="11"/></svg>
+            </span>
+            <h3>Member Status</h3>
+            <p>
+              Useful status at a glance — location freshness, distance, battery
+              level, charging state, location accuracy, and weather.
+            </p>
+            <p class="note">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Battery and weather sharing are controlled by consent settings.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </span>
+            <h3>Offline AI Assistant</h3>
+            <p>
+              A built-in help assistant that works without internet, answering
+              app-related questions from a bundled knowledge base.
+            </p>
+            <p class="note">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              It runs entirely on your device as an in-app help assistant.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <h3>Privacy &amp; User Control</h3>
+            <p>
+              Control location sharing, battery-status sharing, and weather
+              updates. Leave a family whenever you like, and delete your
+              account at any time.
+            </p>
+            <p class="note">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Only current location is stored — there is no location history or
+              timeline.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <h3>Account Management</h3>
+            <p>
+              Sign in with Google or email and password, with email verification
+              and password reset supported.
+            </p>
+            <p class="note">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              Account deletion is available in the application.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon feature-card__icon--accent" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </span>
+            <h3>Free Application</h3>
+            <p>Family Path is designed as a free application.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= HOW IT WORKS ========================= -->
+    <section id="how-it-works" class="section" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">How it works</span>
+          <h2 id="how-title">Up and running in four simple steps</h2>
+        </div>
+        <ol class="steps" data-reveal-group>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">1</span>
+            <h3>Install Family Path Locator</h3>
+            <p>Download the app on your Android phone.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">2</span>
+            <h3>Sign in</h3>
+            <p>Continue with Google, or use email and password.</p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">3</span>
+            <h3>Create or join a family</h3>
+            <p>
+              Create a family and share its 8-character Family Code — or enter
+              a Family Code from your family.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step__num" aria-hidden="true">4</span>
+            <h3>Stay connected</h3>
+            <p>
+              View family members, share your current location, chat, and send
+              Safety Alerts.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================== SCREENSHOTS ========================== -->
+    <section id="screenshots" class="section section--soft" aria-labelledby="shots-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Screenshots</span>
+          <h2 id="shots-title">A look inside Family Path Locator</h2>
+          <p class="lead">
+            Real application screenshots will be placed here. Each frame below
+            is a labelled placeholder.
+          </p>
+        </div>
+        <!-- To add a real screenshot, replace the .device__screen contents with:
+             <img src="/public/assets/family-path/screenshots/<name>.png"
+                  alt="Descriptive alternative text" width="..." height="..." loading="lazy"> -->
+        <div class="shot-grid" data-reveal-group>
+          <figure class="shot">
+            <div class="device" role="img" aria-label="Placeholder screenshot: Home / Map">
+              <div class="device__screen">
+                <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span class="device__pending">Coming soon</span>
+              </div>
+            </div>
+            <figcaption><h3 class="shot__label">Home / Map</h3></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="device" role="img" aria-label="Placeholder screenshot: Member location sheet">
+              <div class="device__screen">
+                <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span class="device__pending">Coming soon</span>
+              </div>
+            </div>
+            <figcaption><h3 class="shot__label">Member location sheet</h3></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="device" role="img" aria-label="Placeholder screenshot: Family screen">
+              <div class="device__screen">
+                <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span class="device__pending">Coming soon</span>
+              </div>
+            </div>
+            <figcaption><h3 class="shot__label">Family screen</h3></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="device" role="img" aria-label="Placeholder screenshot: Family Code">
+              <div class="device__screen">
+                <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span class="device__pending">Coming soon</span>
+              </div>
+            </div>
+            <figcaption><h3 class="shot__label">Family Code</h3></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="device" role="img" aria-label="Placeholder screenshot: Safety Alert">
+              <div class="device__screen">
+                <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span class="device__pending">Coming soon</span>
+              </div>
+            </div>
+            <figcaption><h3 class="shot__label">Safety Alert</h3></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="device" role="img" aria-label="Placeholder screenshot: Chat">
+              <div class="device__screen">
+                <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span class="device__pending">Coming soon</span>
+              </div>
+            </div>
+            <figcaption><h3 class="shot__label">Chat</h3></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="device" role="img" aria-label="Placeholder screenshot: GeoTag camera">
+              <div class="device__screen">
+                <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span class="device__pending">Coming soon</span>
+              </div>
+            </div>
+            <figcaption><h3 class="shot__label">GeoTag camera</h3></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="device" role="img" aria-label="Placeholder screenshot: AI Assistant">
+              <div class="device__screen">
+                <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span class="device__pending">Coming soon</span>
+              </div>
+            </div>
+            <figcaption><h3 class="shot__label">AI Assistant</h3></figcaption>
+          </figure>
+
+          <figure class="shot">
+            <div class="device" role="img" aria-label="Placeholder screenshot: Settings">
+              <div class="device__screen">
+                <svg class="device__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                <span class="device__pending">Coming soon</span>
+              </div>
+            </div>
+            <figcaption><h3 class="shot__label">Settings</h3></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ PRIVACY ============================ -->
+    <section id="privacy" class="section" aria-labelledby="privacy-title">
+      <div class="container privacy-grid">
+        <div class="privacy__copy" data-reveal>
+          <span class="eyebrow">Privacy</span>
+          <h2 id="privacy-title">Sharing that stays in the family</h2>
+          <p class="lead">
+            Family Path is designed around current location sharing within your
+            family — with clear controls for what you share.
+          </p>
+          <ul class="check-list">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              Current location only
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              No location history
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              Location visible within your family group
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              Background location is user-controlled
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              Battery sharing has a consent toggle
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              Weather sharing has a consent toggle
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              GeoTag photos are not uploaded
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="20 6 9 17 4 12"/></svg>
+              Account deletion is supported
+            </li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn--outline" href="/family-path-locator/privacy-policy/">Read the privacy policy</a>
+          </div>
+        </div>
+        <div class="privacy__art" data-reveal>
+          <img src="/public/assets/family-path/images/flash2%20location%20sharing.png" alt="" width="500" height="500" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== GOOD TO KNOW ========================== -->
+    <section id="good-to-know" class="section section--warm" aria-labelledby="gtk-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Good to know</span>
+          <h2 id="gtk-title">Important details, up front</h2>
+          <p class="lead">A few honest notes about how Family Path Locator works.</p>
+        </div>
+        <div class="notes-grid" data-reveal-group>
+          <article class="note-card">
+            <h3>Location updates</h3>
+            <p>
+              Family Path is not a continuous, second-by-second tracker.
+              Location updates follow the application's configured update and
+              movement policy.
+            </p>
+          </article>
+          <article class="note-card">
+            <h3>Safety Alerts</h3>
+            <p>
+              Safety Alerts require internet connectivity and appropriate
+              notification permissions. They are not a replacement for
+              emergency services.
+            </p>
+          </article>
+          <article class="note-card">
+            <h3>Weather</h3>
+            <p>
+              Weather information is provided for informational purposes and
+              depends on third-party weather data.
+            </p>
+          </article>
+          <article class="note-card">
+            <h3>Photos</h3>
+            <p>
+              GeoTag photos remain on the user's device unless the user chooses
+              to share them.
+            </p>
+          </article>
+          <article class="note-card">
+            <h3>Android</h3>
+            <p>The current application is available for Android.</p>
+          </article>
+          <article class="note-card">
+            <h3>Chat</h3>
+            <p>
+              Chat currently supports text and emoji and does not provide
+              message push notifications.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= CTA ============================= -->
+    <section class="section section--dark cta-band" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <h2 id="cta-title">Ready to stay close?</h2>
+          <p>
+            Get Family Path Locator for Android and join your family with a
+            Family Code.
+          </p>
+        </div>
+        <div class="actions" data-reveal>
+          <a class="btn btn--light" href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>
+            <svg class="btn__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+            Get it on Google Play
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/family-path-locator/">
+            <img class="brand__img" src="/public/assets/family-path/icons/familypath.png" alt="" width="38" height="38" loading="lazy">
+            <span class="brand__text">
+              <span class="brand__name">Family Path Locator</span>
+              <span class="brand__by">by BINKOD Tech</span>
+            </span>
+          </a>
+          <p class="footer-brand__text">
+            Private family location sharing, Safety Alerts, family chat, and
+            more — for Android.
+          </p>
+          <a class="binkod-link" href="https://www.binkod.in/" target="_blank" rel="noopener noreferrer">
+            <img src="/public/assets/shared/binkod.png" alt="BINKOD Tech" width="150" height="68" loading="lazy">
+          </a>
+          <p class="made-in">Made in India <span class="made-in__heart" aria-hidden="true">❤️</span></p>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer__title">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="/family-path-locator/">Home</a></li>
+            <li><a href="/family-path-locator/#features">Features</a></li>
+            <li><a href="/family-path-locator/#how-it-works">How It Works</a></li>
+            <li><a href="/family-path-locator/#screenshots">Screenshots</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer__title">Support</h2>
+          <ul class="footer-links">
+            <li><a href="/family-path-locator/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="/family-path-locator/terms-and-conditions/">Terms &amp; Conditions</a></li>
+            <li><a href="/family-path-locator/disclaimer/">Disclaimer</a></li>
+            <li><a href="/family-path-locator/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-cta">
+          <h2 class="footer__title">Get the app</h2>
+          <p class="footer-cta__text">Family Path Locator for Android.</p>
+          <!-- Play Store URL is configured centrally in js/global.js. -->
+          <a class="btn btn--play btn--sm" href="https://play.google.com/store/apps/details?id=com.binkod.familypath" target="_blank" rel="noopener noreferrer" data-play-link>
+            <svg class="btn__play-icon" viewBox="0 0 92 101" aria-hidden="true" focusable="false"><path fill="#EA4335" d="M42.7141006,48.2030918 L0.378682653,92.5574864 C1.34201801,95.9718278 3.8294422,98.7491902 7.11735265,100.081627 C10.4052631,101.414063 14.1244454,101.151948 17.1929731,99.3715328 L64.8282049,72.2415332 L42.7141006,48.2030918 Z"/><path fill="#FBBC04" d="M85.5227162,40.6634756 L64.9228444,28.8650805 L41.7361587,49.2125801 L65.0174839,72.1784402 L85.4596231,60.5062311 C89.1508724,58.5735708 91.4640104,54.7514463 91.4640104,50.5848534 C91.4640104,46.4182604 89.1508724,42.5961359 85.4596231,40.6634756 L85.5227162,40.6634756 Z"/><path fill="#4285F4" d="M0.378682653,8.39139474 C0.122773783,9.33743897 -0.00455672329,10.3136395 3.58642309e-13,11.2936738 L3.58642309e-13,89.6552074 C0.00268414143,90.6347753 0.129891998,91.6100356 0.378682653,92.5574864 L44.1652401,49.3387662 L0.378682653,8.39139474 Z"/><path fill="#34A853" d="M43.0295657,50.4744406 L64.9228444,28.8650805 L17.3507056,1.60889485 C15.5610268,0.560731677 13.5255296,0.005596085 11.4515081,0 C6.30402332,-0.0101779895 1.77867801,3.40639326 0.378682653,8.35984823 L43.0295657,50.4744406 Z"/></svg>
+            Get it on Google Play
+          </a>
+        </div>
+      </div>
+      <p class="footer-hosting">
+        Binkod is hosted at <a href="https://boardsilly.in">BOARDSILLY</a>, our home base on the web.
+      </p>
+      <div class="footer-bottom">
+        <span>© 2026 Binkod. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

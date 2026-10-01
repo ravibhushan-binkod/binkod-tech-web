@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/family-path",
+      "destination": "/family-path-locator/",
+      "permanent": true
+    },
+    {
+      "source": "/family-path/:path*",
+      "destination": "/family-path-locator/:path*",
+      "permanent": true
+    }
+  ]
+}
