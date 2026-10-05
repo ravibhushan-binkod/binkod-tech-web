@@ -349,6 +349,107 @@ a.chip:hover {
 }
 
 /* --------------------------------------------------------------------------
+   Hero phone preview — three-area animated screen
+   Shares the root showcase motion (global.css .phone-float / .phone-tilt) and
+   the .app-ui__pills feature-tag cycling (sc-pill), with a dedicated layout:
+   animated tags on top, a reserved screenshot area in the middle, animated
+   tags on the bottom. The phone frame itself (.device / .device--hero) is
+   unchanged.
+   -------------------------------------------------------------------------- */
+.fp-preview {
+  position: relative;
+  width: min(100%, 17.25rem);
+  margin-inline: auto;
+}
+
+.fp-preview__screen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.5rem 0.7rem 0.85rem;
+  text-align: center;
+}
+
+.fp-preview__area {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.fp-preview__tags {
+  padding-top: 0;
+}
+
+/* Middle area — reserved for the future application screenshot */
+.fp-preview__shot {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 8.5rem;
+}
+
+.fp-preview__shot-frame {
+  position: relative;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+  padding: 0.85rem 0.7rem;
+  overflow: hidden;
+  border: 1px dashed var(--c-line-strong);
+  border-radius: 1.15rem;
+  background:
+    linear-gradient(rgba(37, 99, 235, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.07) 1px, transparent 1px),
+    linear-gradient(165deg, #f7faff 0%, #edf3fd 100%);
+  background-size: 18px 18px, 18px 18px, 100% 100%;
+}
+
+.fp-preview__shot-icon {
+  width: 1.9rem;
+  height: 1.9rem;
+  color: var(--c-primary);
+  opacity: 0.85;
+}
+
+.fp-preview__shot-title {
+  max-width: 11rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--c-ink-soft);
+}
+
+/* Drop-in replacement for the future screenshot: absolutely fills the frame, so
+   the phone-screen clipping, rounded corners, responsive sizing and cover fit
+   are handled without touching anything else (see the HTML comment) */
+.fp-preview__shot-frame > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Tag highlight cycle: the top row leads, the bottom row is offset so a single
+   tag lights up at a time across the whole phone (13s loop, shared sc-pill) */
+.fp-preview__screen .fp-preview__tags--bottom li:nth-child(1) { animation-delay: 0.85s, 6.5s; }
+.fp-preview__screen .fp-preview__tags--bottom li:nth-child(2) { animation-delay: 0.97s, 8.67s; }
+.fp-preview__screen .fp-preview__tags--bottom li:nth-child(3) { animation-delay: 1.09s, 10.83s; }
+
+/* Reduced motion: stable preview, no staggered waits — the global block in
+   global.css already collapses durations/iterations to a single instant frame */
+@media (prefers-reduced-motion: reduce) {
+  .fp-preview *,
+  .fp-preview *::before,
+  .fp-preview *::after {
+    animation-delay: 0s !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Trust strip
    -------------------------------------------------------------------------- */
 .trust {
@@ -1222,6 +1323,276 @@ a.chip:hover {
 .contact-card .actions {
   margin-top: auto;
   padding-top: 0.5rem;
+}
+
+/* Contact page — prominent link to the account deletion page */
+.contact-card--highlight {
+  background-color: var(--c-primary-soft);
+  border-color: var(--c-line-strong);
+}
+
+.contact-card--highlight h2 {
+  color: var(--c-ink);
+}
+
+/* --------------------------------------------------------------------------
+   Account & Data Deletion page
+   -------------------------------------------------------------------------- */
+
+/* Hero — the two deletion options */
+.page-hero .lead + p {
+  margin-top: 0.65rem;
+}
+
+.option-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 44em) {
+  .option-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.option-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  height: 100%;
+  padding: clamp(1.15rem, 1rem + 0.7vw, 1.45rem);
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-1);
+  text-decoration: none;
+  transition:
+    border-color var(--t),
+    transform var(--t),
+    box-shadow var(--t);
+}
+
+.option-card:hover {
+  border-color: var(--c-primary);
+  transform: translateY(-3px);
+  box-shadow: var(--sh-2);
+}
+
+.option-card__label {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+}
+
+.option-card__title {
+  color: var(--c-ink);
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.option-card__text {
+  color: var(--c-ink-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+.option-card__cta {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  color: var(--c-primary-strong);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.option-card__cta::after {
+  content: " \2192";
+}
+
+.option-card:hover .option-card__cta {
+  text-decoration: underline;
+}
+
+/* Vertical numbered steps */
+.flow-steps {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+}
+
+.flow-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 1.15rem 1.25rem;
+  background-color: var(--c-bg-soft);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+}
+
+.flow-step__num {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-color: var(--c-primary);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.flow-step__label {
+  margin-bottom: 0.2rem;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.flow-step__text {
+  color: var(--c-ink-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+.flow-step__text strong {
+  color: var(--c-ink);
+}
+
+/* Important notice (family administrator rule) */
+.alert {
+  padding: clamp(1.3rem, 1.1rem + 1vw, 1.75rem);
+  background-color: var(--c-accent-soft);
+  border: 1px solid #f4d3b6;
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-1);
+}
+
+.alert > * + * {
+  margin-top: 0.85rem;
+}
+
+.alert__head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.alert__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--r-md);
+  background-color: #ffffff;
+  color: var(--c-accent);
+}
+
+.alert__icon .icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.alert h3 {
+  font-size: clamp(1.05rem, 1rem + 0.4vw, 1.2rem);
+  color: #6b3d0c;
+}
+
+.alert p,
+.alert li {
+  color: #5b452c;
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+}
+
+.alert strong {
+  color: #453319;
+}
+
+/* Email request panel */
+.email-panel {
+  display: grid;
+  gap: 0.65rem;
+  padding: clamp(1.35rem, 1.15rem + 1vw, 1.85rem);
+  background-color: var(--c-primary-soft);
+  border: 1px solid var(--c-line-strong);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-1);
+}
+
+.email-panel__label {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.email-address {
+  display: inline-block;
+  width: fit-content;
+  color: var(--c-primary-strong);
+  font-size: clamp(1.2rem, 1.05rem + 0.9vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+
+.email-panel__subject {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+}
+
+.email-panel__subject strong {
+  color: var(--c-ink);
+}
+
+.email-panel__subject span {
+  color: var(--c-ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.email-panel .actions {
+  margin-top: 0.35rem;
+}
+
+/* Stacked lists used by the deletion page */
+ul.del-list,
+ol.del-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1.35rem;
+  list-style: disc;
+  color: var(--c-ink-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+}
+
+ol.del-list {
+  list-style: decimal;
+}
+
+.del-list li::marker {
+  color: var(--c-primary);
+  font-weight: 700;
+}
+
+.del-list strong {
+  color: var(--c-ink);
 }
 
 /* --------------------------------------------------------------------------

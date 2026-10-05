@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Family Path Locator — Stay Close, Wherever You Go</title>
+  <title>Family Path Locator — Connected Families, Always Safe</title>
   <meta name="description" content="Family Path Locator is a family location-sharing and safety app for Android that helps families stay connected with current location sharing, family chat, Safety Alerts and more.">
   <meta name="theme-color" content="#2563eb">
   <script>
@@ -17,7 +17,7 @@
   <!-- TODO: Add canonical URL and og:url once the production domain is confirmed. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="BINKOD Tech">
-  <meta property="og:title" content="Family Path Locator — Stay Close, Wherever You Go">
+  <meta property="og:title" content="Family Path Locator — Connected Families, Always Safe">
   <meta property="og:description" content="Family Path Locator is a family location-sharing and safety app for Android that helps families stay connected with current location sharing, family chat, Safety Alerts and more.">
   <!-- TODO: Add og:image once the production domain is confirmed. -->
   <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon/fav-96.png">
@@ -105,7 +105,7 @@
             <span class="chip">Family location &amp; safety</span>
           </div>
           <h1>Family Path Locator</h1>
-          <p class="fp-hero__tagline">Stay close, wherever you go</p>
+          <p class="fp-hero__tagline">Connected Families, Always Safe</p>
           <p class="lead">
             A private family location-sharing and safety app designed to help
             families stay connected, share current location, communicate, and
@@ -120,16 +120,56 @@
           </div>
         </div>
         <div class="fp-hero__visual anim-in anim-in--delay">
-          <!-- Application screenshot/mockup area. When the real Home / Map
-               screenshot is supplied, replace the screen contents with:
-               <img src="/public/assets/family-path/screenshots/home-map.png"
+          <!-- Animated phone preview. Motion (float + tilt) and the cycling
+               feature tags reuse the shared showcase animation classes from
+               global.css: .phone-float, .phone-tilt, .app-ui__pills (sc-pill).
+
+               Screen layout, top to bottom:
+                 1. animated feature tags
+                 2. reserved screenshot area (placeholder for now)
+                 3. animated feature tags
+
+               Future screenshot: swap the .fp-preview__shot-frame contents for
+               a single image — the frame already clips it to the phone screen
+               with rounded corners, keeps it responsive, and
+               .fp-preview__shot-frame > img handles the fit:
+               <img class="fp-preview__shot-img"
+                    src="/public/assets/family-path/screenshots/home-map.png"
                     alt="Family Path home screen showing the family map"
-                    width="..." height="..." loading="lazy"> -->
-          <div class="device device--hero" role="img" aria-label="Placeholder for the Family Path Locator home and map screenshot">
-            <div class="device__screen">
-              <img class="device__icon" src="/public/assets/family-path/icons/familypath.png" alt="" width="56" height="56">
-              <span class="device__label">Home / Map</span>
-              <span class="device__pending">Screenshot coming soon</span>
+                    width="540" height="1140" loading="lazy"> -->
+          <div class="fp-preview">
+            <div class="phone-float">
+              <div class="phone-tilt">
+                <div class="device device--hero">
+                  <div class="device__screen fp-preview__screen">
+                    <!-- Top area — animated feature tags -->
+                    <div class="fp-preview__area">
+                      <ul class="app-ui__pills fp-preview__tags fp-preview__tags--top" role="list">
+                        <li>Location Sharing</li>
+                        <li>Family Groups</li>
+                        <li>Safety Alerts</li>
+                      </ul>
+                    </div>
+
+                    <!-- Middle area — reserved for the future Home/Map screenshot -->
+                    <div class="fp-preview__shot">
+                      <div class="fp-preview__shot-frame">
+                        <svg class="fp-preview__shot-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                        <p class="fp-preview__shot-title">Home Screenshot Coming Soon</p>
+                      </div>
+                    </div>
+
+                    <!-- Bottom area — animated feature tags -->
+                    <div class="fp-preview__area">
+                      <ul class="app-ui__pills fp-preview__tags fp-preview__tags--bottom" role="list">
+                        <li>Weather</li>
+                        <li>GeoTag</li>
+                        <li>Current Location</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -732,9 +772,6 @@
           </a>
         </div>
       </div>
-      <p class="footer-hosting">
-        Binkod is hosted at <a href="https://boardsilly.in">BOARDSILLY</a>, our home base on the web.
-      </p>
       <div class="footer-bottom">
         <span>© 2026 Binkod. All rights reserved.</span>
       </div>
