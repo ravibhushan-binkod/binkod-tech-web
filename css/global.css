@@ -914,27 +914,6 @@ main[id] {
   height: 2rem;
 }
 
-/* Hosting note — BOARDSILLY web home */
-.footer-hosting {
-  margin-top: clamp(1.5rem, 1.2rem + 1vw, 2rem);
-  color: var(--c-muted);
-  font-size: var(--fs-xs);
-  line-height: 1.6;
-}
-
-.footer-hosting a {
-  color: var(--c-ink-soft);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-decoration: none;
-  transition: color var(--t-fast);
-}
-
-.footer-hosting a:hover {
-  color: var(--c-primary-strong);
-  text-decoration: underline;
-}
-
 /* Contact email — displayed as plain styled text, never a mailto link */
 .contact-email {
   font-weight: 600;

@@ -12,11 +12,10 @@ pages.
 
 - Brand / company: **BINKOD Tech** (Binkod)
 - BINKOD website: <https://www.binkod.in/>
-- Contact email: `binkodtech@gmail.com` — displayed only on
-  `/family-path-locator/contact/` (nowhere else on the site)
-- Web home (hosting): [BOARDSILLY](https://boardsilly.in) — our home base on
-  the web, referenced in the footer of the homepage and root page. BOARDSILLY
-  is only the web home, not a product or a second brand.
+- Contact email: `binkodtech@gmail.com` — displayed on
+  `/family-path-locator/contact/` (plain text) and on
+  `/family-path-locator/delete-account/` (as a `mailto:` link, required for the
+  Google Play account-deletion flow); nowhere else on the site
 
 ## Technology
 
@@ -31,7 +30,7 @@ pages.
 
 ### Family Path Locator (primary product)
 
-- Tagline: *Stay close, wherever you go*
+- Tagline: *Connected Families, Always Safe*
 - A private family location-sharing and safety app for Android — family map,
   current location sharing, family chat, Safety Alerts, GeoTag camera, and
   more. Designed as a free Android application.
@@ -62,7 +61,8 @@ pages.
 | `/family-path-locator/privacy-policy` | Family Path Locator Privacy Policy |
 | `/family-path-locator/terms-and-conditions` | Family Path Locator Terms & Conditions |
 | `/family-path-locator/disclaimer` | Family Path Locator Disclaimer |
-| `/family-path-locator/contact` | Contact & Support — App Support, Account Deletion, "Before you write" topic links, Support & Privacy document cards. The **only** page that displays `binkodtech@gmail.com` (plain text, no `mailto:`). |
+| `/family-path-locator/contact` | Contact & Support — heading **"Help Center / Support"**: App Support, one prominent **Account & Data Deletion** card linking to the deletion page ("Learn More About Account Deletion"), "Before you write" topic links, Support & Privacy document cards. Displays `binkodtech@gmail.com` as plain text (no `mailto:`). |
+| `/family-path-locator/delete-account` | **Account & Data Deletion** — the public page intended as the *Delete account URL* in Google Play Console: in-app deletion steps (Profile → scroll to bottom → Delete Account, no Settings step), the family-administrator restriction, email deletion request (`mailto:` with a pre-filled subject), request processing, and a contact CTA. No company name is used in user-facing instructions. |
 | `/404.html` | Not-found page |
 
 The legal pages are **product-specific to Family Path Locator** and live only
@@ -89,7 +89,8 @@ binkod-tech-web/
 │   ├── privacy-policy/index.html
 │   ├── terms-and-conditions/index.html
 │   ├── disclaimer/index.html
-│   └── contact/index.html
+│   ├── contact/index.html
+│   └── delete-account/index.html      # Public deletion page (Google Play delete URL)
 ├── binkod-abc/                       # BINKOD ABC upcoming-product page
 │   └── index.html
 ├── css/
@@ -171,11 +172,15 @@ such as `/family-path-locator/privacy-policy`.
   avoid "live tracking" / "real-time tracking" wording.
 - Safety Alerts require internet and notification permissions; they are not a
   replacement for emergency services.
-- The official contact email is `binkodtech@gmail.com`. Display it as plain
-  styled text — **no `mailto:` links**. It is shown **only** on
-  `/family-path-locator/contact/` (the App Support section). It must not appear on
-  any other page — not the root homepage, not the Family Path homepage or
-  its footer, not the Family Path legal pages, not the BINKOD ABC page.
+- The official contact email is `binkodtech@gmail.com`. On
+  `/family-path-locator/contact/` display it as plain styled text — **no
+  `mailto:` links**. The single exception is
+  `/family-path-locator/delete-account/`, where the email must be a clickable
+  `mailto:` link (with the pre-filled subject
+  `Family Path Locator — Account Deletion Request`) because the page is used as
+  the *Delete account URL* in Google Play Console. The email must not appear on
+  any other page — not the root homepage, not the Family Path homepage or its
+  footer, not the Family Path legal pages, not the BINKOD ABC page.
 - Google Play buttons (`data-play-link`) all carry the real listing URL
   (`https://play.google.com/store/apps/details?id=com.binkod.familypath`,
   also configured in `js/global.js`) with `target="_blank"
